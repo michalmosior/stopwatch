@@ -1,0 +1,165 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--roboto);
+	color: var(--fontColor);
+}
+
+:root {
+	--roboto: 'Roboto Mono', monospace;
+	--xanh: 'Xanh Mono', monospace;
+	--nova: 'Nova Mono', monospace;
+	--mainBackgroundColor: rgb(153, 233, 255);
+	--stoperBackgroundColor: rgb(82, 185, 214);
+	--buttonHoverColor: rgb(13, 84, 104);
+	--fontColor: #000;
+	--fontColorHover: #fff;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: var(--mainBackgroundColor);
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	width: 90%;
+	height: 40%;
+	max-width: 800px;
+	padding: 5%;
+	background-color: var(--stoperBackgroundColor);
+	border-radius: 10px;
+	box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.change-box {
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	justify-content: space-between;
+	grid-area: 1 / 1 / 6 / 2;
+	align-self: flex-start;
+	justify-self: center;
+}
+.info-box {
+	grid-area: 1 / 5 / 6 / 6;
+	align-self: flex-start;
+	justify-self: center;
+}
+.stopwatch {
+	grid-area: 1 / 2 / 4 / 5;
+	font-size: 3rem;
+	align-self: center;
+	justify-self: center;
+}
+.buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	grid-area: 4 / 2 / 6 / 5;
+}
+
+.fas {
+	font-size: 1rem;
+	transition: color 0.3s;
+	cursor: pointer;
+}
+
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--buttonHoverColor);
+	border-radius: 5px;
+	background-color: var(--stoperBackgroundColor);
+	margin-bottom: 0.2rem;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+	background-color: var(--buttonHoverColor);
+	color: var(--fontColorHover);
+}
+button:hover .fas {
+	color: var(--fontColorHover);
+}
+.change-btn,
+.font-btn {
+	border: none;
+	padding: 0.5rem;
+}
+
+.active {
+	background-color: var(--buttonHoverColor);
+	color: var(--stoperBackgroundColor);
+}
+
+.start,
+.pause,
+.stop,
+.clear {
+	width: 23%;
+}
+
+.archive {
+	font-size: 1rem;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+@media (min-width: 576px) {
+	.stopwatch {
+		font-size: 4rem;
+	}
+	.fas {
+		font-size: 1.4rem;
+	}
+	.archive {
+		font-size: 1.4rem;
+	}
+}
+@media (min-width: 768px) {
+	.stopwatch {
+		font-size: 5rem;
+	}
+	.fas {
+		font-size: 1.6rem;
+	}
+	.archive {
+		font-size: 1.6rem;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		height: 50%;
+		padding: 3%;
+	}
+	.stopwatch {
+		font-size: 5rem;
+	}
+	.fas {
+		font-size: 1.8rem;
+	}
+	.archive {
+		font-size: 1.8rem;
+	}
+}
+@media (min-width: 1700px) {
+	.stopwatch {
+		font-size: 6rem;
+	}
+	.fas {
+		font-size: 2rem;
+	}
+	.archive {
+		font-size: 2rem;
+	}
+}
